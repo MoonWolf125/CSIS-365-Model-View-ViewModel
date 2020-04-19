@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.msum.csis365.mvvmlab.R;
 import com.msum.csis365.mvvmlab.model.Contact;
 import com.msum.csis365.mvvmlab.view.contact.create.CreateContactActivity;
@@ -24,6 +25,8 @@ import com.msum.csis365.mvvmlab.view.contact.detail.ContactFragment;
 import com.msum.csis365.mvvmlab.view.custom.IContactRowListener;
 
 import java.util.List;
+
+import javax.xml.datatype.Duration;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -94,6 +97,8 @@ public class ContactsFragment extends Fragment implements IContactRowListener {
                 .replace(R.id.frame_layout, fragment)
                 .addToBackStack(null)
                 .commit();
+
+        Snackbar.make(getView(), "This is the finished lab - Do not Grade", Snackbar.LENGTH_INDEFINITE).show();
     }
 
     @Override
