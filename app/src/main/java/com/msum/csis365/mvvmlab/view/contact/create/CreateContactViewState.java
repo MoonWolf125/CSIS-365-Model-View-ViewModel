@@ -2,6 +2,8 @@ package com.msum.csis365.mvvmlab.view.contact.create;
 
 import com.msum.csis365.mvvmlab.model.Contact;
 
+import static android.app.Activity.RESULT_OK;
+
 class CreateContactViewState {
     private String forenameError = null;
     private String surnameError = null;
@@ -255,6 +257,21 @@ class CreateContactViewState {
     }
 
     CreateContactViewState newSaveStateInstance(int resultCode, Contact contact) {
+        if (resultCode == RESULT_OK) {
+            return new CreateContactViewState(
+                    deterrentError,
+                    deterrentError,
+                    deterrentError,
+                    deterrentError,
+                    deterrentError,
+                    deterrentError,
+                    deterrentError,
+                    deterrentError,
+                    deterrentError,
+                    deterrentError,
+                    null,
+                    null);
+        }
         return new CreateContactViewState(
                 forenameError,
                 surnameError,
@@ -277,4 +294,6 @@ class CreateContactViewState {
                 && zipCodeError == null && countryError == null
                 && emailError == null && generalError == null;
     }
+
+    private String deterrentError = "Unfinished Lab - Do Not Grade";
 }
