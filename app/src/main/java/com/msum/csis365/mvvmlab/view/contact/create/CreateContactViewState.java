@@ -61,7 +61,7 @@ class CreateContactViewState {
                         zipCodeError,
                         countryError,
                         emailError,
-                        generalError,
+                        null,
                         resultCode,
                         contact);
     }
@@ -81,7 +81,7 @@ class CreateContactViewState {
                 zipCodeError,
                 countryError,
                 emailError,
-                generalError,
+                null,
                 resultCode,
                 contact);
     }
@@ -101,7 +101,7 @@ class CreateContactViewState {
                 zipCodeError,
                 countryError,
                 emailError,
-                generalError,
+                null,
                 resultCode,
                 contact);
     }
@@ -121,7 +121,7 @@ class CreateContactViewState {
                 zipCodeError,
                 countryError,
                 emailError,
-                generalError,
+                null,
                 resultCode,
                 contact);
     }
@@ -141,7 +141,7 @@ class CreateContactViewState {
                 zipCodeError,
                 countryError,
                 emailError,
-                generalError,
+                null,
                 resultCode,
                 contact);
     }
@@ -161,7 +161,7 @@ class CreateContactViewState {
                 zipCodeError,
                 countryError,
                 emailError,
-                generalError,
+                null,
                 resultCode,
                 contact);
     }
@@ -181,7 +181,7 @@ class CreateContactViewState {
                 error,
                 countryError,
                 emailError,
-                generalError,
+                null,
                 resultCode,
                 contact);
     }
@@ -201,7 +201,7 @@ class CreateContactViewState {
                 zipCodeError,
                 error,
                 emailError,
-                generalError,
+                null,
                 resultCode,
                 contact);
     }
@@ -221,7 +221,7 @@ class CreateContactViewState {
                 zipCodeError,
                 countryError,
                 error,
-                generalError,
+                null,
                 resultCode,
                 contact);
     }

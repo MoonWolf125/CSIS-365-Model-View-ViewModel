@@ -182,11 +182,10 @@ public class CreateContactViewModel extends AndroidViewModel {
 
         // TODO - STEP 34 - Add the state's validation check to this conditional
         if (isValidSaveState()) {
-
-            // TODO - STEP 34 - Have the State create a new instance of itself with the proper
+            // TODO - STEP 35 - Have the State create a new instance of itself with the proper
             //                  Result and newly created Contact
         } else {
-            // TODO - STEP 35 - Have the State create a new instance of itself with the Error
+            // TODO - STEP 36 - Have the State create a new instance of itself with the Error
             //                  Then set that state to the Mutable Live Data
         }
     }
