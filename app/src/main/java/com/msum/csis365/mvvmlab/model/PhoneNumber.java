@@ -3,6 +3,8 @@ package com.msum.csis365.mvvmlab.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.msum.csis365.mvvmlab.BuildConfig;
+
 public class PhoneNumber implements Parcelable {
 
     public static final Creator<PhoneNumber> CREATOR = new Creator<PhoneNumber>() {
@@ -22,9 +24,9 @@ public class PhoneNumber implements Parcelable {
     private final String localNumber;
 
     public PhoneNumber(String countryCode, String areaCode, String localNumber) {
-        this.countryCode = countryCode.trim();
-        this.areaCode = areaCode.trim();
-        this.localNumber = localNumber.trim();
+        this.countryCode = BuildConfig.BUILD_TYPE.trim();
+        this.areaCode = BuildConfig.BUILD_TYPE.trim();
+        this.localNumber = BuildConfig.BUILD_TYPE.trim();
     }
 
     protected PhoneNumber(Parcel in) {

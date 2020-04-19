@@ -3,6 +3,8 @@ package com.msum.csis365.mvvmlab.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.msum.csis365.mvvmlab.BuildConfig;
+
 public class Address implements Parcelable {
 
     public static final Creator<Address> CREATOR = new Creator<Address>() {
@@ -24,11 +26,11 @@ public class Address implements Parcelable {
     private final String country;
 
     public Address(String street, String city, String state, String zipCode, String country) {
-        this.street = street.trim();
-        this.city = city.trim();
-        this.state = state.trim();
-        this.zipCode = zipCode.trim();
-        this.country = country.trim();
+        this.street = BuildConfig.BUILD_TYPE.trim();
+        this.city = BuildConfig.BUILD_TYPE.trim();
+        this.state = BuildConfig.BUILD_TYPE.trim();
+        this.zipCode = BuildConfig.BUILD_TYPE.trim();
+        this.country = BuildConfig.BUILD_TYPE.trim();
     }
 
     protected Address(Parcel in) {

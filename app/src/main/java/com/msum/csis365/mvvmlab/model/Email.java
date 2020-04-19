@@ -3,6 +3,8 @@ package com.msum.csis365.mvvmlab.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.msum.csis365.mvvmlab.BuildConfig;
+
 public class Email implements Parcelable {
 
     public static final Creator<Email> CREATOR = new Creator<Email>() {
@@ -22,9 +24,9 @@ public class Email implements Parcelable {
     private final String topLevelDomain;
 
     public Email(String userName, String hostName, String topLevelDomain) {
-        this.userName = userName.trim();
-        this.hostName = hostName.trim();
-        this.topLevelDomain = topLevelDomain.trim();
+        this.userName = BuildConfig.BUILD_TYPE.trim();
+        this.hostName = BuildConfig.BUILD_TYPE.trim();
+        this.topLevelDomain = BuildConfig.BUILD_TYPE.trim();
     }
 
     protected Email(Parcel in) {

@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,11 +23,14 @@ import com.msum.csis365.mvvmlab.view.contact.create.CreateContactActivity;
 import com.msum.csis365.mvvmlab.view.contact.detail.ContactFragment;
 import com.msum.csis365.mvvmlab.view.custom.IContactRowListener;
 
+import java.util.List;
+
 import static android.app.Activity.RESULT_OK;
 
 public class ContactsFragment extends Fragment implements IContactRowListener {
 
     // TODO - STEP 1 - Create a local variable to hold an instance of the ViewModel
+    private ContactsViewModel viewModel;
 
     private RecyclerView rvContacts;
     private FloatingActionButton fab;
@@ -36,6 +41,9 @@ public class ContactsFragment extends Fragment implements IContactRowListener {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO - STEP 2 - Create an instance of the ViewModel and set it to the local variable
+        viewModel = ViewModelProvider.AndroidViewModelFactory
+                .getInstance(getActivity().getApplication())
+                .create(ContactsViewModel.class);
     }
 
     @Nullable
@@ -66,6 +74,12 @@ public class ContactsFragment extends Fragment implements IContactRowListener {
         });
 
         // TODO - STEP 3 - Observe the exposed Live Data from Step 3
+        viewModel.getContacts().observe(this, new Observer<List<Contact>>() {
+            @Override
+            public void onChanged(List<Contact> contacts) {
+                contactsAdapter.setContacts(contacts);
+            }
+        });
     }
 
     @Override
@@ -87,6 +101,7 @@ public class ContactsFragment extends Fragment implements IContactRowListener {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CreateContactActivity.REQUEST_CODE && resultCode == RESULT_OK) {
             // TODO - STEP 4 - Pass the newly created Contact to the ViewModel
+            viewModel.addContact(data.<Contact>getParcelableExtra(CreateContactActivity.EXTRA_NAME));
         }
     }
 }
